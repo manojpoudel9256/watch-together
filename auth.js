@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
         await db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash]);
         res.status(201).json({ success: true, message: 'User created' });
     } catch (err) {
-        if (err.code === 'ER_DUP_ENTRY') {
+        if (err.code === 'SQLITE_CONSTRAINT' || err.message.includes('UNIQUE constraint failed')) {
             res.status(409).json({ error: 'Username already exists' });
         } else {
             console.error(err);
@@ -55,7 +55,7 @@ router.post('/rooms', async (req, res) => {
         await db.query('INSERT INTO rooms (name, created_by) VALUES (?, ?)', [name, created_by || null]);
         res.status(201).json({ success: true });
     } catch (err) {
-        if (err.code === 'ER_DUP_ENTRY') res.status(409).json({ error: 'Room name exists' });
+        if (err.code === 'SQLITE_CONSTRAINT' || err.message.includes('UNIQUE constraint failed')) res.status(409).json({ error: 'Room name exists' });
         else res.status(500).json({ error: 'Server error' });
     }
 });

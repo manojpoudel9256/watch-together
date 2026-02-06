@@ -16,7 +16,7 @@ A real-time "Watch Party" application that allows users to create rooms, chat, a
 -   **Frontend**: HTML5, CSS3 (Custom Design), JavaScript (ES6+).
 -   **Backend**: Node.js, Express.js.
 -   **Real-Time**: Socket.IO.
--   **Database**: MySQL (currently running via XAMPP).
+-   **Database**: SQLite (Zero-config, file-based).
 -   **Video**: YouTube IFrame Player API.
 
 ## 🚀 How to Run Locally
