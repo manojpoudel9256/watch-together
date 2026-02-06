@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Together - Lobby</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body id="page-lobby">
+
+    <div id="toast" class="toast hidden"></div>
+
+    <header class="lobby-header">
+        <div class="logo-small"><i class="fa-solid fa-play"></i> WT</div>
+        <div class="user-profile">
+            <i class="fa-solid fa-user-circle"></i> <span id="lobby-username">--</span>
+            <button id="btn-logout" class="icon-btn"><i class="fa-solid fa-sign-out-alt"></i></button>
+        </div>
+    </header>
+
+    <div class="lobby-content">
+        <h1>Select a Room</h1>
+
+        <div class="create-room-box">
+            <input type="text" id="new-room-name" placeholder="New Room Name...">
+            <button id="btn-create-room"><i class="fa-solid fa-plus"></i> Create</button>
+        </div>
+
+        <div id="room-list" class="room-grid">
+            <div class="room-card loading">Loading rooms...</div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
