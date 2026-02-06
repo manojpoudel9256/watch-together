@@ -47,7 +47,7 @@ A real-time "Watch Party" application that allows users to create rooms, chat, a
 
 ## 📸 Screenshots
 
-*(You can add screenshots of your App here)*
+![Watch Together App](watch-together.png)
 
 ## 📄 License
 
